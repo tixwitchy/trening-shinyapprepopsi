@@ -293,6 +293,61 @@ URL <- "https://osf.io/download/mxrc2/"
 <img class="center" height="500" src="https://media.giphy.com/media/1k889fiqiZV19HO2sx/giphy.gif">
 </section>
 
+## **UI kod**
+UI se, u slučaju repopsi aplikacije, sastoji od navbarPage koja ima sidebarPanel sa leve i mainPanel sa desne strane.Na ovaj način se uredjuje raspored elemenata aplikacije.
+
+Pre samog sadržaja ovih panela postoji deo koji definiše temu, javaskript koji je važan za global pretragu tabele, css koji uredjuje boje i naslova same aplikacije
+
+## **Tema i javaskript**
+
+
+<section>
+<img class="center" height="300" src="slike/tema i js.png">
+</section>
+
+
+## **Sadržaj myscript.js**
+
+<section>
+<img class="center" height="500" src="slike/javaskript.png">
+</section>
+
+## **www folder **
+U ovom trenutku bismo pomenuli da www folder postoji da bi se u njega ubacile slike (logoi i slično), ako je kompleksniji css fajl ili javaskript.
+
+<section>
+<img class="center" height="250" src="slike/wwwfolder.png">
+<img class="center" height="250" src="slike/sadrzajwwwfoldera.png">
+</section>
+
+## **Uredjivanje estetike aplikacije **
+Postoji više načina kako može da se uredjuje aplikacija. Može da se direktno primeni CSS ili HTML ili postoje već neke funkcije u shiny-u koje obavljaju upravo to. Prvo ćemo vam prikazati deo koji se odnosi na sredjivanje estetike a koji se sastoji od CSS-a.Sa **tags$** mogu da se uredjuju specifični delovi aplikacije.
+<section>
+<img class="center" height="350" src="slike/uredjivanje boje font.png">
+</section>
+
+## **Neke od funkcija**
+- **strong()** boldovan tekst
+
+- **a("tekst"/slika, href="link")** linkovan tekst
+
+- **style=""** uredjivanje položaja boje slike, teksta i slicno
+
+- **h2(),h3(),h4(),h5(), h6()** veličina teksta
+
+- **br()** razmak
+
+- **img()** slika
+
+- **align=""** levo, desno, justified, centriran tekst
+
+
+
+
+
+
+
+
 ## **Korisni linkovi i kontakt**
 
 - [Shiny tutorijal](https://shiny.rstudio.com/tutorial/)
