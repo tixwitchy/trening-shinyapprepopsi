@@ -67,9 +67,6 @@ repopsi1$`Contact email address` <- ifelse(is.na(repopsi1$`Contact email address
                                                                             
                          repopsi1$`Contact email address`  ,"</a>"))
 
-#Adding ID row in order to allow for filtering of original table based on row ID
-
-repopsi1$ID <- seq.int(nrow(repopsi1))
 
 # Merging various columns to be shown in the table
 
@@ -261,7 +258,7 @@ server <- function (input, output, session) {
                                                                               
                                   scrollX = TRUE, 
                   
-                                columnDefs = list(list(visible=FALSE, targets=c(-1:-15))))) 
+                                columnDefs = list(list(visible=FALSE, targets=c(-1:-14))))) 
 
   })  
   
