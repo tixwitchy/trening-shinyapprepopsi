@@ -1,0 +1,306 @@
+---
+title:
+author: 
+output: 
+  revealjs::revealjs_presentation:
+          theme: sky
+          highlight: kate
+          transition: slide
+          reveal_options:
+            slideNumber: true
+          
+ 
+---
+## **Trening Shiny App repopsi** 
+ <center> Tijana Blagojev - [**EUI**](https://www.eui.eu/people?id=tijana-blagojev)/[**R-Ladies Belgrade**](https://www.meetup.com/rladies-belgrade/) </center>
+ <center> [**Duško Medić**](https://www.linkedin.com/in/duskomedic/?originalSubdomain=rs) - [**Centar za održive zajednice**](https://odrzivezajednice.org/) </center>
+
+<style type="text/css">
+  .reveal p {
+    text-align: justify;
+  }
+  .reveal ul {
+    display: block;
+  }
+  .reveal ol {
+    display: block;
+  }
+  
+</style>
+
+<section>
+    <img class="center" height="500" src="slike/repopsiapp.png">
+</section>
+
+## **Cilj treninga**
+
+- Da se upoznamo sa osnovama Shiny aplikacije
+
+- Da rekreiramo web aplikaciju repopsi
+
+- Da publikujemo aplikaciju koristeći [**Shinyapps.io**](https://www.shinyapps.io)
+
+## **Šta je Shiny web aplikacija?**
+
+[**Shiny**](https://shiny.rstudio.com) je paket [RStudio-a](https://rstudio.com) koji se koristi za pravljenje interaktivnih web aplikacija uz pomoć [R programskog jezika](https://r-project.org).
+
+Možete da napravite aplikaciju na posebnoj web stranici kao što je slučaj sa [repopsi](https://repopsi.shinyapps.io/repopsi/) ili da vam bude deo [R Markdown](https://rmarkdown.rstudio.com/index.html) dokumenta ili da pravite takozvane [Shiny dashboards](http://rstudio.github.io/shinydashboard/). Možete takođe da unapredite Shiny aplikaciju uz pomoć CSS tema, htmlwidgets-a, ili JavaScript-a.
+
+Shiny aplikacije se lako kreiraju. Nisu neophodne veštine za izradu web stranica. Ali ukoliko ih imate još bolje.
+
+## **Napravićemo novi projekat**
+<section>
+<img class="center" height="500" src="slike/novi direktorijum.png">
+</section>
+
+## **Napravićemo novi projekat**
+<section>
+<img class="center" height="500" src="slike/novi projekat shiny.png">
+</section>
+
+## **Napravićemo novi projekat**
+<section>
+<img class="center" height="500" src="slike/noviprojekat.png">
+</section>
+
+## **Otvorićemo Shiny aplikaciju**
+
+<section>
+<img class="center" height="500" src="slike/shiny aplikacija.png">
+</section>
+
+## **Izgled Shiny aplikacije**
+
+<section>
+<img class="center" height="500" src="slike/Izgled shiny aplikacije.png">
+</section>
+
+## **app.R**
+
+Kod za Shiny aplikaciju ima tri dela:
+
+1) **global kod**
+
+- Gde se importuju biblioteke, pristupa izvoru podataka i gde se podaci sredjuju
+
+2) **UI kod**
+
+-  UI (User interface) gde se prilagodjava izgled aplikacije
+
+3) **Server kod**
+
+- Kod koji pokreće aplikaciju, gde se prava magija dešava
+
+
+## **Da vidimo kako izgleda pravljenje shiny aplikacije**
+<section>
+<img class="center" height="500" src="https://media.giphy.com/media/S8zwSO1qULuQbTbNh3/giphy.gif">
+</section>
+
+
+## **Shiny paket i drugi paketi koji su potrebni za izradu aplikacije**
+
+Prvo ćemo instalirati shiny paket i ostale pakete koji su neophodni za aplikaciju. 
+
+
+```{r eval=FALSE, message=FALSE}
+
+install.packages("shiny") #za shiny aplikaciju
+
+install.packages("shinythemes") # teme koje ulepšavaju izgled aplikacije
+
+install.packages("shinyWidgets") # uredjivanje dugmića ili nekih drugih delova aplikacije
+
+install.packages("tidyverse") # za obradu i pripremanje podataka za vizuelni prikaz
+
+install.packages("DT") # odličan paket za pravljenje tabela
+
+install.packages("gsheet") # koristi se za uvoz google sheets
+
+install.packages("writexl") # koristi se u delu za skidanje podataka u excel formatu
+
+install.packages("httr") # služi za preuzimanje i skidanje podataka u csv-u sa linka 
+```
+
+
+## **Shiny paket i drugi paketi koji su potrebni za izradu aplikacije**
+
+Potom ćemo uvesti biblioteke koje su nam potrebne
+
+```{r,message=FALSE}
+
+library (shiny)
+
+library (shinythemes)
+
+library (shinyWidgets)
+
+library (tidyverse)
+
+library (gsheet)
+
+library (writexl)
+
+library (httr)
+
+```
+
+
+## **Skinućemo kod originalne aplikacije**
+Idite na [sledeći link](https://github.com/tixwitchy/trening-shinyapprepopsi).
+
+<section>
+<img class="center" height="450" src="slike/githubdownload.png">
+</section>
+
+## **Global kod**
+<section>
+<img class="center" height="450" src="https://media.giphy.com/media/SBMuvm3zhk7MKNhCJP/giphy.gif">
+</section>
+
+## **Global deo preuzimanje podataka**
+
+Za ovo koristimo gsheet biblioteku
+
+```{r,message=FALSE}
+
+repopsi <- gsheet2tbl("https://docs.google.com/spreadsheets/d/1A6O1d0S7iBYsKVbdBP9AWdYXMWvrN_lCh_oMldCmNsA/edit#gid=0")
+
+```
+
+## **Global deo prikaz podataka**
+
+
+```{r,echo=FALSE, message=FALSE, height= 500}
+
+DT :: datatable (repopsi, rownames = FALSE, options = list(
+  bPaginate = TRUE, scrollX=T, scrollY = "400px", lengthMenu=c(3,5,10), pageLength = 10,info= FALSE,initComplete = DT::JS(
+    "function(settings, json) {",
+    "$(this.api().table().container()).css({'font-size': '15px'});",
+    "}")))
+```
+
+## **Uredjivanje kolona**
+
+```{r,message=FALSE}
+
+repopsi <- repopsi[-c(1:8),]
+
+my.names <- repopsi[1,]
+
+colnames(repopsi) <- my.names
+
+repopsi <- repopsi[-1,]
+
+repopsi <- repopsi[,-1]
+
+colnames(repopsi)<-gsub(".$","",colnames(repopsi))
+
+```
+
+## **Tabela posle uredjivanja kolona**
+
+```{r,echo=FALSE, message=FALSE}
+
+DT :: datatable (repopsi, rownames = FALSE, options = list(
+  bPaginate = TRUE, scrollX=T, scrollY = "400px", lengthMenu=c(3,5,10), pageLength = 10,info= FALSE,initComplete = DT::JS(
+    "function(settings, json) {",
+    "$(this.api().table().container()).css({'font-size': '15px'});",
+    "}")))
+```
+
+## **Važna napomena**
+
+- Da bi gsheet2tbl neophodno je da "Share by link" uključen. 
+- Ukoliko promenite google sheet morate da sredite kolone u skladu sa tim.
+- Ukoliko želite da koristite excel potreban vam je drugi paket za uvoz tih podataka a to je readxl::read_xlsx().
+- Ako je excel fajl treba proveriti da li treba sredjivati podatke ili ne.
+
+## **Dodavanje linkova**
+
+```{r,message=FALSE}
+repopsi1 <-repopsi
+# Koristi se za dodavanje linkova na več postojeće informacije u koloni (to je važno za funkciju datatable)
+
+repopsi1$`Source of the original instrument` <- ifelse(is.na(repopsi1$`Source of the original instrument`), 
+                                                       
+NA, paste0("<a href='", repopsi1$`Source of the original instrument`, "' target='_blank'>",
+                           
+repopsi1$`Source of the original instrument`, " </a>"))
+
+# Koristi se za pretvaranje u aktivni link za slanje na email adresu u koloni
+repopsi1$`Contact email address` <- ifelse(is.na(repopsi1$`Contact email address`  ),
+                                                                 
+NA, paste0("<a href='mailto:",repopsi1$`Contact email address`  , "' target='_blank'>",
+                                                                            
+repopsi1$`Contact email address`  ,"</a>"))
+
+```
+
+## **Spajanje kolona i uklanjanje nepotrebnih**
+
+```{r,message=FALSE}
+repopsi1<- repopsi1%>%
+  
+  unite(`Instrument name and version`, `Title in English`, Abbreviation, Version, sep = " | ",remove = FALSE, na.rm = TRUE)%>%
+  
+  select(-c(`Title in English`,Abbreviation,Version))%>%
+  
+  unite(`Contact person`, `Contact person`, `Contact email address`, sep = " | ",remove = FALSE, na.rm = TRUE) %>%
+  
+  select(-`Contact email address`) %>%
+  
+  unite(`Where to find the instrument?`, `Instrument availability`, `Link to instrument in the Repository`, `Link to instrument outside of the Repository`, sep = " | ",remove = FALSE,na.rm = TRUE)%>%
+  
+  select(-c(`Instrument availability`, `Link to instrument in the Repository`, `Link to instrument outside of the Repository`))
+
+```
+
+## **Menjanje redosleda kolona**
+
+```{r,message=FALSE}
+repopsi1<- repopsi1%>%
+  
+  relocate(`Where to find the instrument?`, .after = `Instrument name and version`) %>%
+  
+  relocate(`Citation of the original instrument`, .after = `Where to find the instrument?`) %>%
+  
+  relocate(`Citation of the translation/adaptation`, .after = `Citation of the original instrument`) %>%
+  
+  relocate(Keywords, .after = `Citation of the translation/adaptation`) %>%
+  
+  relocate(`Contact person`, .after = Keywords)
+
+```
+
+## **Originalna tabela i url za skidanje CSV podataka sa drugog sajta **
+
+```{r,message=FALSE}
+  #repopsi duplicate for download 
+
+repopsi2 <-repopsi
+
+repopsi2$ID  <-seq.int(nrow(repopsi2))
+
+#URL for CSV download of all data
+
+URL <- "https://osf.io/download/mxrc2/"
+
+```
+
+## **UI kod **
+<section>
+<img class="center" height="500" src="https://media.giphy.com/media/1k889fiqiZV19HO2sx/giphy.gif">
+</section>
+
+## **Korisni linkovi i kontakt**
+
+- [Shiny tutorijal](https://shiny.rstudio.com/tutorial/)
+- [Galerija Shiny aplikacija](https://shiny.rstudio.com/gallery/)
+- [R-ladies Belgrade meetup stranica](https://www.meetup.com/rladies-belgrade/)
+-  Kontakt [Duško Medić](mailto:dusko.medic@gmail.com) i [Tijana Blagojev](mailto:etijana@gmail.com)
+
+## **Hvala mnogo na pažnji!**
+<section>
+<img class="center" height="500" src="https://media.giphy.com/media/QAsBwSjx9zVKoGp9nr/giphy.gif">
+</section>
