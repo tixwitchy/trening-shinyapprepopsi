@@ -1,6 +1,5 @@
 ---
 title:
-author: 
 output: 
   revealjs::revealjs_presentation:
           theme: sky
@@ -9,8 +8,11 @@ output:
           reveal_options:
             slideNumber: true
           
- 
+
 ---
+ 
+
+
 ## **Trening Shiny App repopsi** 
  <center> Tijana Blagojev - [**EUI**](https://www.eui.eu/people?id=tijana-blagojev)/[**R-Ladies Belgrade**](https://www.meetup.com/rladies-belgrade/) </center>
  <center> [**Duško Medić**](https://www.linkedin.com/in/duskomedic/?originalSubdomain=rs) - [**Centar za održive zajednice**](https://odrzivezajednice.org/) </center>
@@ -66,7 +68,7 @@ Shiny aplikacije se lako kreiraju. Nisu neophodne veštine za izradu web stranic
 ## **Otvorićemo Shiny aplikaciju**
 
 <section>
-<img class="center" height="500" src="slike/shiny aplikacija.png">
+<img class="center" height="400" src="slike/shiny aplikacija.png">
 </section>
 
 ## **Izgled Shiny aplikacije**
@@ -211,10 +213,10 @@ DT :: datatable (repopsi, rownames = FALSE, options = list(
 
 ## **Važna napomena**
 
-- Da bi gsheet2tbl neophodno je da "Share by link" uključen. 
+- Da bi gsheet2tbl funkcionisao, neophodno je da je "Share by link" uključen. 
 - Ukoliko promenite google sheet morate da sredite kolone u skladu sa tim.
-- Ukoliko želite da koristite excel potreban vam je drugi paket za uvoz tih podataka a to je readxl::read_xlsx().
-- Ako je excel fajl treba proveriti da li treba sredjivati podatke ili ne.
+- Ukoliko želite da koristite excel potreban vam je drugi paket za uvoz tih podataka, a to je readxl::read_xlsx().
+- Ako je novi excel fajl, treba proveriti da li treba sredjivati podatke ili ne.
 
 ## **Dodavanje linkova**
 
@@ -341,12 +343,30 @@ Postoji više načina kako može da se uredjuje aplikacija. Može da se direktno
 
 - **align=""** levo, desno, justified, centriran tekst
 
+## **UI inputs**
+Najvažniji deo **ui** predstavljaju takozvani inputi. To su dakle različite vrste opcija gde se unose odredjene komande, podaci, gde će se pojaviti odredjeni grafikon a zatim se na **server** strani od tih unosa u realnom vremenu prikazuju tabele, grafikoni, skidaju podaci i slično u vidu output-a.
 
+Ovo zapravo jeste najinteresantniji deo aplikacije. Svaki input ima svoj id koji mu vi dodeljujete i jako je važno da zapamtite kako ste ga nazvali. 
 
+U side panelu ove aplikacije ima 4 inputa (unos teksta za filtriranje i tri dugmeta za skidanje podataka) a u main panelu jedan (tabela).
 
+## **UI inputs**
 
+sidebarPanel
 
+- tags$input sa id **global_filter**
+- downloadBttn sa id **downloadfilterxlsx**
+- downloadBttn sa id **downloadalldatacsv**
+- downloadBttn sa id **downloadalldataxlsx**
 
+mainPanel
+
+- dataTableOutput sa id **tablerepopsi**
+
+## **Server kod **
+<section>
+<img class="center" height="500" src="https://media.giphy.com/media/sMKedUx9w9m8OGwXi6/giphy.gif">
+</section>
 
 ## **Korisni linkovi i kontakt**
 
