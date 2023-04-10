@@ -35,11 +35,11 @@ output:
 
 ## **Cilj treninga**
 
-- Da se upoznamo sa osnovama Shiny aplikacije
+- Da se upoznamo sa osnovama Shiny aplikacije.
 
-- Da rekreiramo web aplikaciju repopsi
+- Da rekreiramo web aplikaciju repopsi.
 
-- Da publikujemo aplikaciju koristeći [**Shinyapps.io**](https://www.shinyapps.io)
+- Da publikujemo aplikaciju koristeći [**Shinyapps.io**](https://www.shinyapps.io).
 
 ## **Šta je Shiny web aplikacija?**
 
@@ -336,7 +336,7 @@ U ovom trenutku bismo pomenuli da www folder postoji da bi se u njega ubacile sl
 Postoji više načina kako može da se uredjuje aplikacija. Može da se direktno primeni CSS ili HTML ili postoje već neke funkcije u shiny-u koje obavljaju upravo to. Prvo ćemo vam prikazati deo koji se odnosi na sredjivanje estetike a koji se sastoji od CSS-a. Sa **tags$** mogu da se uredjuju specifični delovi aplikacije.
 
 <section>
-<img class="center" height="350" src="slike/uredjivanje boje font.png">
+<img class="center" height="330" src="slike/uredjivanje boje font.png">
 </section>
 
 ## **Neke od funkcija HTML5**
