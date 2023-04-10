@@ -12,27 +12,26 @@ output:
 ---
  
 
-
 ## **Trening Shiny App repopsi** 
  <center> Tijana Blagojev - [**EUI**](https://www.eui.eu/people?id=tijana-blagojev)/[**R-Ladies Belgrade**](https://www.meetup.com/rladies-belgrade/) </center>
  <center> [**Duško Medić**](https://www.linkedin.com/in/duskomedic/?originalSubdomain=rs) - [**Centar za održive zajednice**](https://odrzivezajednice.org/) </center>
+
+<section>
+    <img class="center" height="500" src="slike/repopsiapp.png">
+</section>
 
 <style type="text/css">
   .reveal p {
     text-align: justify;
   }
   .reveal ul {
-    display: block;
+    text-align: justify;
   }
   .reveal ol {
     display: block;
   }
   
 </style>
-
-<section>
-    <img class="center" height="500" src="slike/repopsiapp.png">
-</section>
 
 ## **Cilj treninga**
 
@@ -51,16 +50,19 @@ Možete da napravite aplikaciju na posebnoj web stranici kao što je slučaj sa 
 Shiny aplikacije se lako kreiraju. Nisu neophodne veštine za izradu web stranica. Ali ukoliko ih imate još bolje.
 
 ## **Napravićemo novi projekat**
+
 <section>
 <img class="center" height="500" src="slike/novi direktorijum.png">
 </section>
 
 ## **Napravićemo novi projekat**
+
 <section>
 <img class="center" height="500" src="slike/novi projekat shiny.png">
 </section>
 
 ## **Napravićemo novi projekat**
+
 <section>
 <img class="center" height="500" src="slike/noviprojekat.png">
 </section>
@@ -127,7 +129,7 @@ install.packages("httr") # služi za preuzimanje i skidanje podataka u csv-u sa 
 
 ## **Shiny paket i drugi paketi koji su potrebni za izradu aplikacije**
 
-Potom ćemo uvesti biblioteke koje su nam potrebne
+Potom ćemo uvesti biblioteke koje su nam potrebne.
 
 ```{r,message=FALSE}
 
@@ -156,13 +158,14 @@ Idite na [sledeći link](https://github.com/tixwitchy/trening-shinyapprepopsi).
 </section>
 
 ## **Global kod**
+
 <section>
 <img class="center" height="450" src="https://media.giphy.com/media/SBMuvm3zhk7MKNhCJP/giphy.gif">
 </section>
 
 ## **Global deo preuzimanje podataka**
 
-Za ovo koristimo gsheet biblioteku
+Za ovo koristimo gsheet biblioteku.
 
 ```{r,message=FALSE}
 
@@ -213,9 +216,12 @@ DT :: datatable (repopsi, rownames = FALSE, options = list(
 
 ## **Važna napomena**
 
-- Da bi gsheet2tbl funkcionisao, neophodno je da je "Share by link" uključen. 
+- Da bi gsheet2tbl funkcionisao, neophodno je da je "Share by link" uključen.
+
 - Ukoliko promenite google sheet morate da sredite kolone u skladu sa tim.
+
 - Ukoliko želite da koristite excel potreban vam je drugi paket za uvoz tih podataka, a to je readxl::read_xlsx().
+
 - Ako je novi excel fajl, treba proveriti da li treba sredjivati podatke ili ne.
 
 ## **Dodavanje linkova**
@@ -291,11 +297,13 @@ URL <- "https://osf.io/download/mxrc2/"
 ```
 
 ## **UI kod **
+
 <section>
 <img class="center" height="500" src="https://media.giphy.com/media/1k889fiqiZV19HO2sx/giphy.gif">
 </section>
 
 ## **UI kod**
+
 UI se, u slučaju repopsi aplikacije, sastoji od navbarPage koja ima sidebarPanel sa leve i mainPanel sa desne strane. Na ovaj način se uredjuje raspored elemenata aplikacije.
 
 Pre samog sadržaja ovih panela postoji deo koji definiše temu, javaskript koji je važan za global pretragu tabele, css koji uredjuje boje i naslova same aplikacije.
@@ -315,6 +323,7 @@ Pre samog sadržaja ovih panela postoji deo koji definiše temu, javaskript koji
 </section>
 
 ## **www folder **
+
 U ovom trenutku bismo pomenuli da www folder postoji da bi se u njega ubacile slike (logoi i slično), ako je kompleksniji css fajl ili javaskript.
 
 <section>
@@ -325,6 +334,7 @@ U ovom trenutku bismo pomenuli da www folder postoji da bi se u njega ubacile sl
 ## **Uredjivanje estetike aplikacije **
 
 Postoji više načina kako može da se uredjuje aplikacija. Može da se direktno primeni CSS ili HTML ili postoje već neke funkcije u shiny-u koje obavljaju upravo to. Prvo ćemo vam prikazati deo koji se odnosi na sredjivanje estetike a koji se sastoji od CSS-a. Sa **tags$** mogu da se uredjuju specifični delovi aplikacije.
+
 <section>
 <img class="center" height="350" src="slike/uredjivanje boje font.png">
 </section>
@@ -396,9 +406,43 @@ mainPanel
 <img class="center" height="500" src="slike/download all data excel output.png">
 </section>
 
-## **Objavljivanje aplikacije na Shinyapps**
+## **Objavljivanje aplikacije na Shinyapps.io**
 <section>
 <img class="center" height="500" src="https://media.giphy.com/media/h1Hvk7Vp3KKIenIBWK/giphy.gif">
+</section>
+
+## **Objavljivanje aplikacije na Shinyapps.io**
+
+Da biste objavili aplikaciju na Shinyapps.io potrebno je da otvorite nalog.
+Najbolje objašnjen način korak po korak kako da objavite aplikaciju na shinyapp je na sledećem [linku](https://shiny.rstudio.com/articles/shinyapps.html). Tu se nalaze informacije kako da povežete shinyapp nalog sa vašim lokalnim kompjuterom.
+
+<section>
+<img class="center" height="250" src="slike/shinyappsnalog.png">
+</section>
+
+
+## **Objavljivanje aplikacije na Shinyapps.io iz RStudio-a**
+
+Kada ste obavili povezivanje Shinyapps.io i Rstudio-a, vratite se na vašu aplikaciju u RStudio-u. Kliknite na plavu Publish ikonu u gornjem desnom uglu.
+
+<section>
+<img class="center" height="250" src="slike/publishicon.png">
+</section>
+
+## **Objavljivanje aplikacije na Shinyapps.io iz RStudio-a**
+
+
+
+Izaberite fajlove koji su potrebni da se objave. U slučaju repopsi aplikacije to je www folder koji sadrži **dva logo-a** i **javaskript** fajl i **app.R** fajl. Takodje, u ovom koraku birate i nalog koji ste povezali sa shinyapps.io. I kliknite na **Publish**.
+
+<section>
+<img class="center" height="300" src="slike/fajloviinalog.png">
+</section>
+
+## **Bravo!**
+
+<section>
+<img class="center" height="500" src="https://media.giphy.com/media/fXDqamyZLsDqNAcJEf/giphy.gif">
 </section>
 
 ## **Korisni linkovi i kontakt**
