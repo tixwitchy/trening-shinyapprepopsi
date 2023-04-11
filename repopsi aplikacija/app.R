@@ -223,7 +223,7 @@ position: absolute !important;
   
      Horizon 2020 research and innovation programme under grant agreement No 101017536.", align = "justify"),
   
-  h6("This web application has received support from the ", a("EOSC Future",hef="https://eoscfuture.eu/"),
+  h6("This web application has received support from the ", a("EOSC Future",href="https://eoscfuture.eu/"),
   
   " through the ", a( "RDA",href = "https://www.rd-alliance.org/"), 
   
