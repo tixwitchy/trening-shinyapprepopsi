@@ -335,8 +335,10 @@ U ovom trenutku bismo pomenuli da www folder postoji da bi se u njega ubacile sl
 
 Postoji više načina kako može da se uredjuje aplikacija. Može da se direktno primeni CSS ili HTML ili postoje već neke funkcije u shiny-u koje obavljaju upravo to. Prvo ćemo vam prikazati deo koji se odnosi na sredjivanje estetike a koji se sastoji od CSS-a. Sa **tags$** mogu da se uredjuju specifični delovi aplikacije.
 
+## **Uredjivanje estetike aplikacije **
+
 <section>
-<img class="center" height="330" src="slike/uredjivanje boje font.png">
+<img class="center" height="500" src="slike/uredjivanje boje font.png">
 </section>
 
 ## **Neke od funkcija HTML5**
