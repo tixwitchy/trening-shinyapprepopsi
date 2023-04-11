@@ -5,7 +5,7 @@ The shiny web app contained in the folder **repopsi aplikacija** was created tog
 is led by the [University of Belgrade Faculty of Philosophy](https://www.f.bg.ac.rs/en2) and [LIRA – Laboratory for Research of Individual Differences](https://lira.f.bg.ac.rs/en/).
 The application is available at the following link: https://repopsi.shinyapps.io/repopsi/.
 
-This project also contains the reveal.js presentation **index.rmd**, **index.html** files and folder **slike** for the purpose of training of University of Belgrade,
+This project also contains the reveal.js presentation (**index.rmd**, **index.html** files and folder **slike**) for the purpose of training of University of Belgrade,
 Faculty of Philosophy's staff on how to maintain the shiny app. The presentation is available at the following link: https://treningshinyapprepopsi.netlify.app/.
 
 Ova shiny veb aplikacija koja se nalazi u folderu **repopsi aplikacija** kreirana je zajedno sa [Duškom Medićem](https://www.linkedin.com/in/duskomedic/) u okviru 
