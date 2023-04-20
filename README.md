@@ -1,7 +1,7 @@
 # trening-shinyapprepopsi
  
-<p align="justify"> The shiny web app contained in the folder **repopsi aplikacija** was created together with [Duško Medić](https://www.linkedin.com/in/duskomedic/) within “TRUST-ification and FAIR-ification of an Open Repository for Research Instruments in Psychology: REPOPSI’s Adoption of RDA Outputs” that
-is led by the [University of Belgrade Faculty of Philosophy](https://www.f.bg.ac.rs/en2) and [LIRA – Laboratory for Research of Individual Differences](https://lira.f.bg.ac.rs/en/). The application is available at the following link: https://repopsi.shinyapps.io/repopsi/. </p>
+ The shiny web app contained in the folder **repopsi aplikacija** was created together with [Duško Medić](https://www.linkedin.com/in/duskomedic/) within “TRUST-ification and FAIR-ification of an Open Repository for Research Instruments in Psychology: REPOPSI’s Adoption of RDA Outputs” that
+is led by the [University of Belgrade Faculty of Philosophy](https://www.f.bg.ac.rs/en2) and [LIRA – Laboratory for Research of Individual Differences](https://lira.f.bg.ac.rs/en/). The application is available at the following link: https://repopsi.shinyapps.io/repopsi/.
 
 <p align="justify"> This project also contains the reveal.js presentation (**index.rmd**, **index.html** files and folder **slike**) for the purpose of training of University of Belgrade,
 Faculty of Philosophy's staff on how to maintain the shiny app. The presentation is available at the following link: https://treningshinyapprepopsi.netlify.app/. </p>
