@@ -37,9 +37,9 @@ output:
 
 - Da se upoznamo sa osnovama Shiny aplikacije.
 
-- Da rekreiramo web aplikaciju repopsi.
+- Da vidimo kako se pravi web aplikacija repopsi.
 
-- Da publikujemo aplikaciju koristeći [**Shinyapps.io**](https://www.shinyapps.io).
+- Da vidimo kako se publikuje aplikacija koristeći [**Shinyapps.io**](https://www.shinyapps.io).
 
 ## **Šta je Shiny web aplikacija?**
 
@@ -306,7 +306,7 @@ URL <- "https://osf.io/download/mxrc2/"
 
 UI se, u slučaju repopsi aplikacije, sastoji od navbarPage koja ima sidebarPanel sa leve i mainPanel sa desne strane. Na ovaj način se uredjuje raspored elemenata aplikacije.
 
-Pre samog sadržaja ovih panela postoji deo koji definiše temu, javaskript koji je važan za global pretragu tabele, css koji uredjuje boje i naslova same aplikacije.
+Pre samog sadržaja ovih panela postoji deo koji definiše temu, javaskript koji je važan za global pretragu tabele i css koji uredjuje boje, veličinu slova same aplikacije.
 
 ## **Tema i javaskript**
 
@@ -359,11 +359,11 @@ Postoji više načina kako može da se uredjuje aplikacija. Može da se direktno
 
 ## **UI widget-i i reaktivni output-i**
 
-Najvažniji deo **ui** predstavljaju razni widget-i ili reaktivni output-i. To su dakle različite vrste opcija gde se ili unose odredjene komande, podaci, ili gde će se pojaviti odredjeni grafikon/tabela a zatim se na **server** strani od tih unosa u realnom vremenu prikazuju tabele, grafikoni, skidaju podaci i slično u vidu output-a. Na ovaj način se obezbedjuje interaktivnost.
+Najvažniji deo **ui** predstavljaju razni widget-i ili reaktivni output-i. To su dakle različite vrste opcija gde se ili unose odredjeni podaci, ili gde će se pojaviti odredjeni grafikon/tabela a zatim se na **server** strani od tih unosa u realnom vremenu prikazuju tabele, grafikoni, skidaju podaci u vidu output-a. Na ovaj način se obezbedjuje interaktivnost.
 
 Svaki widget ili reaktivni output ima svoj id koji mu vi dodeljujete i jako je važno da zapamtite kako ste ga nazvali. 
 
-U sporednom panelu ove aplikacije ima 4 widget-a (unos teksta za filtriranje i tri dugmeta za skidanje podataka) a u glavnom panelu jedan reaktivni output (tabela).
+U sidebarPanel-u ove aplikacije ima 4 widget-a (unos teksta za filtriranje i tri dugmeta za skidanje podataka) a u glavnom panelu jedan reaktivni output (tabela).
 
 ## **UI widget-i i reaktivni output**
 
@@ -388,6 +388,12 @@ mainPanel
 <section>
 <img class="center" height="100" src="slike/datatable.png">
 <img class="center" height="350" src="slike/datatable output.png">
+</section>
+
+## **HTML tabela**
+
+<section>
+<img class="center" height="600" src="slike/htmltabela.png">
 </section>
 
 ## **Aktiviranje skidanja filtriranih podataka**
