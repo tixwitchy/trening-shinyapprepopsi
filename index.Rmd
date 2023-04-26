@@ -150,13 +150,6 @@ library (httr)
 ```
 
 
-## **Skinućemo kod originalne aplikacije**
-Idite na [sledeći link](https://github.com/tixwitchy/trening-shinyapprepopsi).
-
-<section>
-<img class="center" height="450" src="slike/githubdownload.png">
-</section>
-
 ## **Global kod**
 
 <section>
