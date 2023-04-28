@@ -13,7 +13,7 @@ output:
  
 
 ## **Trening Shiny App repopsi** 
- <center> Tijana Blagojev - [**EUI**](https://cmpf.eui.eu/team/tijana-blagojev/)/[**R-Ladies Belgrade**](https://www.meetup.com/rladies-belgrade/) </center>
+ <center> [**Tijana Blagojev**](https://www.linkedin.com/in/tijana-blagojev-288b3442/) - [**EUI**](https://cmpf.eui.eu/team/tijana-blagojev/)/[**R-Ladies Belgrade**](https://www.meetup.com/rladies-belgrade/) </center>
  <center> [**Duško Medić**](https://www.linkedin.com/in/duskomedic/?originalSubdomain=rs) - [**Centar za održive zajednice**](https://odrzivezajednice.org/) </center>
 
 <section>
